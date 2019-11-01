@@ -12,55 +12,57 @@
 <body>
    <div class="clock"></div>
 
-              <script>
 
-                    let showCurrentTime = () =>{
-                
-                    const currentSecond = () =>{
-                        if (new Date().getSeconds() < 10) {
-                            return `0${new Date().getSeconds()}`;
-                        }else {
-                            return new Date().getSeconds();
-                        }
-                    };
-
-                    const currentMinute = () =>{
-                        if (new Date().getMinutes() < 10) {
-                            return `0${new Date().getMinutes()}`;
-                        }else {
-                            return new Date().getMinutes();
-                        }
-                    };
-
-                    const currentHour = () =>{
-                        if (new Date().getHours() > 12){
-                            return `0${new Date().getHours() - 12}`
-                        } else {
-                            return new Date().getHours();
-                        }
-                    };
-
-                    const meridian = () =>{
-                        if (new Date().getHours() >11){
-                            return "PM";
-                        } else {
-                            return "AM";
-                        }
-                    }
-
-                    const currentTime = `${currentHour()} : ${currentMinute()} : ${currentSecond()} ${meridian()}`;
-            
-                    document.querySelector('.clock').innerText = currentTime;
-                    
-                    };
-                    
-                    showCurrentTime();
-            
-                    var oneSecond = 1000;
-                    setInterval( showCurrentTime, oneSecond);
-            
-                </script>
     
 </body>
+
+<script>
+
+        let showCurrentTime = () =>{
+    
+        const currentSecond = () =>{
+            if (new Date().getSeconds() < 10) {
+                return `0${new Date().getSeconds()}`;
+            }else {
+                return new Date().getSeconds();
+            }
+        };
+
+        const currentMinute = () =>{
+            if (new Date().getMinutes() < 10) {
+                return `0${new Date().getMinutes()}`;
+            }else {
+                return new Date().getMinutes();
+            }
+        };
+
+        const currentHour = () =>{
+            if (new Date().getHours() > 12){
+                return `0${new Date().getHours() - 12}`
+            } else {
+                return new Date().getHours();
+            }
+        };
+
+        const meridian = () =>{
+            if (new Date().getHours() >11){
+                return "PM";
+            } else {
+                return "AM";
+            }
+        }
+
+        const currentTime = `${currentHour()} : ${currentMinute()} : ${currentSecond()} ${meridian()}`;
+
+        document.querySelector('.clock').innerText = currentTime;
+        
+        };
+        
+        showCurrentTime();
+
+        var oneSecond = 1000;
+        setInterval( showCurrentTime, oneSecond);
+
+    </script>
 </html>
 
